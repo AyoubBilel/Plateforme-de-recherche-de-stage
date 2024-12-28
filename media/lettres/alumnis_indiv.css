@@ -1,0 +1,173 @@
+
+#alunis_page{
+    background-color: #00A986;
+    height:40px;
+}
+
+ /*---------------------------------------------------------------- */
+main{
+
+    background-color:#F5F5F5 ;
+    margin-top:5%;
+    margin-left:10%;
+    height: 85%;
+}
+
+
+.Information{
+    margin-left: 110px;
+    width: 350px;
+    text-justify: auto;
+
+}
+
+.parcours{
+    width: 250;
+    height: 150;
+    text-align: justify;
+    background-color: rgb(235, 232, 232);
+    padding: 10px 10px;
+    border-radius: 8px;
+}
+
+#nom_prenoms{
+    position: absolute;  
+    top: 16%; 
+    left: 13%; /* Positionner la gauche de l'élément au milieu */
+    background-color: lightgreen; /* Fond semi-transparent */
+    width: 230px;
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+}
+
+.info{
+    text-decoration:underline;
+    color: black;
+}
+
+#mail{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 76%; /* Positionner le haut de l'élément au milieu */
+    left: 16%; /* Positionner la gauche de l'élément au milieu */
+}
+#mail:hover{
+    background-color: lightgreen;
+}
+#tél{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 85%; /* Positionner le haut de l'élément au milieu */
+    left: 18%; /* Positionner la gauche de l'élément au milieu */
+    cursor:cell;
+}
+#tél:hover{
+    background-color: lightgreen;
+}
+
+#loc{
+    width: 250px;
+    height: auto;
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 93%; /* Positionner le haut de l'élément au milieu */
+    left: 13%; /* Positionner la gauche de l'élément au milieu */
+    text-align: center;
+
+}
+#loc:hover{
+    background-color: lightgreen;
+}
+
+.Secteurs{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 15%; /* Positionner le haut de l'élément au milieu */
+    left: 45%; /* Positionner la gauche de l'élément au milieu */
+}
+.Secteurs:hover{
+    background-color: lightgreen;
+}
+
+.stage_1{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 15%; /* Positionner le haut de l'élément au milieu */
+    left: 70%; /* Positionner la gauche de l'élément au milieu */
+}
+
+.stage_2{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 44%; /* Positionner le haut de l'élément au milieu */
+    left: 45%; /* Positionner la gauche de l'élément au milieu */
+}
+.stage_PFE{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 44%; /* Positionner le haut de l'élément au milieu */
+    left: 70%; /* Positionner la gauche de l'élément au milieu */
+}
+
+.Emploi{
+    position: absolute; /* Positionnement absolu par rapport à son conteneur parent */
+    top: 73%; /* Positionner le haut de l'élément au milieu */
+    left: 45%; /* Positionner la gauche de l'élément au milieu */
+}
+
+.option{
+    width: 20px;
+    background-color:rgb(235, 232, 232) ;
+}
+
+details,summary{
+    max-width: 500px;
+}
+
+
+details {
+    padding: 10px;
+    border-radius: 5px;
+    background-color:rgb(235, 232, 232);
+    width: 250px;
+    height: 20px;
+    max-width: 500px;
+    cursor: default;
+    text-align: center;
+     
+  }
+  details:hover{
+    background-color: lightgreen;
+  }
+  
+  summary {
+    cursor: pointer;
+    font-size: 22px;
+     
+  }
+  details p {
+    background-color: rgb(235, 232, 232);
+    width: 250px;
+    height: 85px;
+    border-radius: 5px;
+    line-height: 1.5;
+    padding:10px;
+    cursor: auto;
+    opacity: 0.65;
+    text-align: center; 
+    margin-bottom: 20px;
+  }
+details p:hover{
+    background-color: lightgreen;
+}
+
+
+
+
+
+
+
+
+.round-img {
+    margin-left: 80px;
+    margin-top: 80px;
+    border-radius: 50%; /* Cette propriété définira la forme de l'image en rond */
+    width: 50px; /* Largeur de l'image */
+    height: 50px; /* Hauteur de l'image */
+    object-fit: cover; /* Pour s'assurer que l'image remplit complètement le cadre rond */
+    cursor: pointer;
+}
