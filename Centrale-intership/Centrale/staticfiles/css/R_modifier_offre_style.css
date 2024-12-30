@@ -1,0 +1,99 @@
+/* Style du conteneur principal */
+
+main {
+    margin-top: 15%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+/* Style du titre */
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+/* Style du formulaire */
+
+.formulaire-offre {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Style des champs de formulaire */
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/* Style des champs de texte */
+
+textarea.form-control {
+    height: 100px;
+    resize: vertical;
+}
+
+
+/* Style du bouton de soumission */
+
+.submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    width: 50%;
+}
+
+.submit:hover {
+    background-color: #0056b3;
+}
+
+
+/* Pied de page */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
