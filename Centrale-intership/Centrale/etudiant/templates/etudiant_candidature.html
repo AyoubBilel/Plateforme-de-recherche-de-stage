@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}mes candidature{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/etudiant_candidature_list.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+{% endblock link %}
+    <style>
+    </style>
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Offre de Stage</th>
+            <th>Entreprise</th>
+            <th>Statut</th>
+            <th>CV</th>
+            <th>Lettre de Motivation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for candidature in candidatures %}
+            <tr>
+                <td>{{ candidature.Offre.titre }}</td>
+                <td>{{ candidature.Offre.entrprise }}</td>
+                <td>{{ candidature.traite }}</td>
+                <td><a href="{{ candidature.cv.url }}" class="btn" download>Télécharger CV</a></td>
+                <td><a href="{{ candidature.lettre.url }}" class="btn" download>Télécharger Lettre</a></td>
+                <td>
+                    <a href="{% url 'etudiant_modifier_candidature' candidature.id %}" class="btn btn-edit">Modifier</a>
+                    <a href="{% url 'etudiant_supprimer_candidature' candidature.id %}" class="btn btn-delete">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock content %}

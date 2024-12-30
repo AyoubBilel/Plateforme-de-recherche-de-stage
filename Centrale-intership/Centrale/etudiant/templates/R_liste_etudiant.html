@@ -1,0 +1,56 @@
+{% extends "rh_base.html" %}
+{% load static %}
+
+{% block title %}Liste des Étudiants{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_liste_etudiants_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Liste des Étudiants</h1>
+    <p class="purpose">Accéder aux profils d'élèves talentueux</p>
+
+    <div class="search-container">
+        <form method="GET" action="{% url 'r_liste_etudiants' %}">
+            <input type="text" name="search" placeholder="Rechercher par nom ou prénom" value="{{ request.GET.search }}">
+            <input type="text" name="annee_etude" placeholder="Rechercher par année d'étude" value="{{ request.GET.annee_etude }}">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Année d'Étude</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for etudiant in etudiants %}
+                <tr>
+                    <td>
+                        {% if etudiant.photo %}
+                        <img src="{{ etudiant.photo.url }}" class="photo-etudiant" alt="Photo de {{ etudiant.first_name }}">
+                    {% else %}
+                        <img src="{% static 'default_photo.png' %}" alt="Photo par défaut" class="photo-etudiant">
+                    {% endif %}
+                    </td>
+                    <td>{{ etudiant.last_name }}</td>
+                    <td>{{ etudiant.first_name }}</td>
+                    <td>{{ etudiant.email }}</td>
+                    <td>{{ etudiant.annee_etude }}</td>
+                    <td><a href="{% url 'portfolio' etudiant.id %}" class="btn-action">Profil</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock content %}

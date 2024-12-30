@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Alumni</title>
+    <link rel="stylesheet" href="ajouter_alumnis_style.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav>
+        <div id="topbar">
+            <!-- Logo de la plateforme -->
+            <a href="index.html"><img src="icone/WhatsApp_Image_2024-03-15_at_17.14.08_5e734879-removebg-preview.png" id="logo" alt="Logo"></a>
+            
+            <!-- Lien vers le profil -->
+            <a href="#" id="nav-link-pro-clik">
+                <img src="icone/icon-park-outline--people.svg" id="profil_logo" alt="Profil">
+                <span id="nom_prenom">Nom et Prénom</span>
+            </a>
+            
+            <!-- Bouton de déconnexion -->
+            <a href="#" id="deconnexion">
+                <button class="Btn">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">Déconnexion</div>
+                </button>
+            </a>
+        </div>
+        
+        <!-- Menu principal -->
+        <div id="nav-bar">
+            <ul>
+                <li>
+                    <a href="index.html" class="lien-nav-bar">
+                        <img src="icone/material-symbols--home-outline.svg" alt="Accueil">
+                        <span class="tooltip">Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="lien-nav-bar">
+                        <img src="icone/mingcute--sector-line.svg" alt="Secteur">
+                        <span class="tooltip">Secteurs d'Activité</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="entreprises.html" class="lien-nav-bar">
+                        <img src="icone/mdi--company.svg" alt="Entreprise">
+                        <span class="tooltip">Entreprises</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="alumni.html" class="lien-nav-bar">
+                        <img src="icone/game-icons--graduate-cap.svg" alt="Alumni">
+                        <span class="tooltip">Étudiants et Alumni</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="offres.html" class="lien-nav-bar">
+                        <img src="icone/icon-park-outline--weixin-cards-offers.svg" alt="Offres">
+                        <span class="tooltip">Offres de Stage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="lien-nav-bar">
+                        <img src="icone/guidance--meeting-room.svg" alt="Entretien">
+                        <span class="tooltip">Cours et Ressources</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#" class="lien-nav-bar">
+                        <img src="icone/ic--twotone-help.svg" alt="Aide">
+                        <span class="tooltip">Aide</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Bloc principal -->
+    <main>
+        <h1>Ajouter un Alumni</h1>
+        <form class="formulaire-alumni">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="promotion">Promotion:</label>
+                <input type="text" id="promotion" name="promotion" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn:</label>
+                <input type="url" id="linkedin" name="linkedin" required>
+            </div>
+            <div class="form-group">
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="stage1a">Stage 1A:</label>
+                <textarea id="stage1a" name="stage1a" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="stage2a">Stage 2A:</label>
+                <textarea id="stage2a" name="stage2a" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="stage3a">Stage 3A:</label>
+                <textarea id="stage3a" name="stage3a" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="emploi">Emploi:</label>
+                <textarea id="emploi" name="emploi" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Ajouter Alumni</button>
+        </form>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Plateforme de Recherche de Stage. Tous droits réservés.</p>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+    </footer>
+</body>
+</html>

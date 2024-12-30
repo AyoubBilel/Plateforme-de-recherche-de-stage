@@ -1,0 +1,20 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_ajouter_entreprise_style.css' %}">
+{% endblock link %}
+{% block content %}
+<main>
+    <h1>Ajouter une Entreprise</h1>
+    <div class="form-container">
+        <form method="POST" class="formulaire-entreprise">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit" class="btn-action">Ajouter l'Entreprise</button>
+                <a href="{% url 'service_home' %}" class="btn-action">Annuler</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

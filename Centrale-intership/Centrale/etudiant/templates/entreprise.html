@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/entreprise_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+
+
+{% endblock %}
+
+{% block content %}
+<div class="entreprise-container">
+    <h1>Entreprises</h1>
+
+    <form method="get" action="." class="search-form">
+        <div class="search-bar">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="Rechercher par nom d'entreprise...">
+            <button type="submit">Rechercher</button>
+        </div>
+        <div class="filters">
+            <input type="text" name="sector" value="{{ sector_filter }}" placeholder="Filtrer par secteur">
+            <input type="text" name="location" value="{{ location_filter }}" placeholder="Filtrer par lieu">
+            <button type="submit">Appliquer les filtres</button>
+        </div>
+    </form>
+
+    <div class="entreprise-grid">
+        {% for entreprise in all_entreprise %}
+            <a href="{% url 'entreprise_description' entreprise.id %}" class="entreprise-card">
+                <div class="entreprise-logo">
+                    <img src="{{ entreprise.logo_url }}" alt="{{ entreprise.nom }} logo">
+                </div>
+                <h3>{{ entreprise.nom }}</h3>
+            </a>
+        {% empty %}
+            <p>Aucune entreprise trouvée.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

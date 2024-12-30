@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Secteurs d'Activité{% endblock %}
+
+{% block link %}
+<!-- Make sure the main styles.css is loaded first -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!-- Then load the sector-specific styles -->
+<link rel="stylesheet" href="{% static 'css/secteur_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style_carousel.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="secteur-container">
+    <h1>Secteurs d'Activité</h1>
+
+    <form method="get" action="." class="search-form">
+        <div class="barre-recherche">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="Rechercher par secteur...">
+            <button type="submit">Rechercher</button>
+        </div>
+    </form>
+</div>
+
+    <div class="secteur-grid">
+        {% for secteur in all_secteur %}
+            <div class="secteur">
+                <a href="{% url 'secteur_description' secteur.id %}" class="secteur-link">
+                    <h3>{{ secteur.nom }}</h3>
+                </a>
+            </div>
+        {% empty %}
+            <p>Aucun secteur trouvé.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

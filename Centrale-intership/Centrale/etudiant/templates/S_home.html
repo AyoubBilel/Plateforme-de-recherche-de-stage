@@ -1,0 +1,73 @@
+{% extends 's_base.html' %}
+{% load static %}
+
+
+{% block title %}Accueil{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static "css/s_base_style.css" %}">
+
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <section id="home" class="section-content">
+        <h1>Bienvenue sur la Plateforme de Gestion de Stage</h1>
+        <p>Nous vous aidons à gérer les stages, les entreprises, et les secteurs d'activité pour faciliter l'intégration des étudiants dans le monde professionnel.</p>
+    </section>
+
+    <!-- Menu principal -->
+    <section class="sections-cles">
+        <div id="gestion-offres" class="section">
+            <h3>Gestion des Offres de Stage</h3>
+            <button class="btn-section"><a href='{% url "s_offre_liste" %}'>Voir Toutes les Offres</a></button>
+            <button class="btn-section"><a href='{% url "s_ajouter_offre" %}'>Ajouter une Offre</a></button>
+        </div>
+        <div id="gestion-entreprises" class="section">
+            <h3>Gestion des Entreprises</h3>
+            <button class="btn-section"><a href='{% url "s_entrprise_liste" %}'>Voir Toutes les Entreprises</a></button>
+            <button class="btn-section"><a href='{% url "s_ajouter_entreprise" %}'> Ajouter une Entreprise </a></button>
+        </div>
+        
+       
+        
+        <div id="gestion-secteurs" class="section">
+            <h3>Gestion des Secteurs d'Activité</h3>
+            <button class="btn-section"><a href='{% url "s_liste_secteur" %}'>Voir Tous les Secteurs</a></button>
+            <button class="btn-section"><a href="{% url 'ajouter_secteur' %}" class="btn-action">Ajouter un Secteur</a></button>
+        </div>
+        <div id="gestion-etudiants-alumni" class="section">
+            <h3>Gestion des Étudiants et Alumni</h3>
+            <button class="btn-section"><a href="{% url 's_liste_etudiants' %}" class="btn-action">Voir Tous les Étudiants</a>
+            </button>
+            <button class="btn-section"><a href="{% url 'ajouter_etudiant' %}" class="btn-action">Ajouter un Étudiant</a>
+            </button>
+            <button class="btn-section"><a href="{% url 's_liste_alumnis' %}" class="btn-action">Voir Tous les Alumni</a>
+            </button>
+            <button class="btn-section"><a href="{% url 'ajouter_alumnis' %}" class="btn-action">Ajouter un Alumni</a>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section d'Aperçu et Statistiques -->
+    <section class="overview">
+        <h2>Aperçu et Statistiques</h2>
+        <p>Nombre total d'offres de stage : <strong>120</strong></p>
+        <p>Nombre total d'entreprises : <strong>50</strong></p>
+        <p>Nombre total d'étudiants placés : <strong>200</strong></p>
+        <p>Dernières notifications : <strong>5 nouvelles offres de stage</strong></p>
+    </section>
+
+</main>
+
+
+<script>
+    function toggleDropdown(event, dropdownId) {
+        event.preventDefault();
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+
+{% endblock %}

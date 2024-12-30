@@ -1,0 +1,28 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_acceil_stye.css' %}">
+{% endblock link %}Home{% block title %}
+{% endblock title %}
+
+{% block content %}
+<section class="welcome-message">
+    <h1>Bienvenue sur le Portail des Ressources Humaines</h1>
+    <p>Votre plateforme dédiée à la gestion des offres de stage et des candidatures.</p>
+</section>
+
+<div class="portal-container">
+    <div class="portal" id="offers-portal">
+        <h2>Gestion des Offres de Stage</h2>
+        <button class="btn-section" onclick="window.location.href='{% url "offre" %}'">Voir Toutes les Offres</button>
+        <button class="btn-section" onclick="window.location.href='{% url "R_ajouter_offre" %}'">Ajouter une Offre</button>
+    </div>
+
+    <div class="portal" id="applications-portal">
+        <h2>Gestion des Candidatures</h2>
+        <button class="btn-section" onclick="window.location.href='{% url "all_candidature" %}'">Voir Toutes les Candidatures</button>
+    </div>
+</div>
+
+
+{% endblock content %}

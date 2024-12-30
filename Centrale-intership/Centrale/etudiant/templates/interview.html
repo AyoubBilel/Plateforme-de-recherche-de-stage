@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}entretien{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/entretien.css' %}">
+
+{% endblock link %}
+
+
+{% block content %}
+
+    <div class="container">
+        <h1>Simulateur d'Entretien</h1>
+        <form id="response-form" method="post" action="{% url 'start_interview' session_id=session.id %}">
+            {% csrf_token %}
+            
+            <audio controls autoplay>
+                <source src="{{ audio_url }}" type="audio/mp3">
+                Votre navigateur ne supporte pas cette audio.
+            </audio>
+            
+            <p>Question {{ question_num }}: {{ question }}</p>
+            
+            <div class="button-container">
+                <button type="button" onclick="startRecognition()">Commencer l'enregistrement</button>
+                <button type="button" onclick="stopRecognition()">Arrêter l'enregistrement</button>
+            </div>
+            
+            <textarea id="response" name="response" readonly></textarea>
+            <input type="hidden" name="question_num" value="{{ question_num }}">
+            
+            <div class="button-container">
+                <button type="button" onclick="submitResponse()">Soumettre la réponse</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/entretien.js' %}"></script>
+
+
+{% endblock content %}

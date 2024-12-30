@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Plateforme de Gestion de Stage</title>
+    <link rel="stylesheet" href="ss_acceuil_style.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav>
+        <div id="topbar">
+            <!-- Logo de la plateforme -->
+            <a href="index.html"><img src="icone/WhatsApp_Image_2024-03-15_at_17.14.08_5e734879-removebg-preview.png" id="logo" alt="Logo"></a>
+            
+            <!-- Lien vers le profil -->
+            <a href="#" id="nav-link-pro-clik">
+                <img src="icone/icon-park-outline--people.svg" id="profil_logo" alt="Profil">
+                <span id="nom_prenom">Nom et Prénom</span>
+            </a>
+            
+            <!-- Bouton de déconnexion -->
+            <a href="#" id="deconnexion">
+                <button class="Btn">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">Déconnexion</div>
+                </button>
+            </a>
+        </div>
+        
+        <!-- Menu principal -->
+        <div id="nav-bar">
+            <ul>
+                <li>
+                    <a href="#home" class="lien-nav-bar">
+                        <img src="icone/material-symbols--home-outline.svg" alt="Accueil">
+                        <span class="tooltip">Accueil</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="lien-nav-bar" onclick="toggleDropdown(event, 'secteur-dropdown')">
+                        <img src="icone/mingcute--sector-line.svg" alt="Secteur">
+                        <span class="tooltip">Secteurs d'Activité</span>
+                    </a>
+                    <div id="secteur-dropdown" class="dropdown-content">
+                        <a href="#gestion-secteurs">Voir Tous les Secteurs</a>
+                        <a href="#ajouter-secteur">Ajouter un Secteur</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="lien-nav-bar" onclick="toggleDropdown(event, 'entreprise-dropdown')">
+                        <img src="icone/mdi--company.svg" alt="Entreprise">
+                        <span class="tooltip">Entreprises</span>
+                    </a>
+                    <div id="entreprise-dropdown" class="dropdown-content">
+                        <a href="#gestion-entreprises">Voir Toutes les Entreprises</a>
+                        <a href="#ajouter-entreprise">Ajouter une Entreprise</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="lien-nav-bar" onclick="toggleDropdown(event, 'etudiants-alumni-dropdown')">
+                        <img src="icone/game-icons--graduate-cap.svg" alt="Alumni">
+                        <span class="tooltip">Étudiants et Alumni</span>
+                    </a>
+                    <div id="etudiants-alumni-dropdown" class="dropdown-content">
+                        <a href="#gestion-etudiants-alumni">Voir Tous les Étudiants</a>
+                        <a href="#ajouter-etudiant">Ajouter un Étudiant</a>
+                        <a href="#voir-alumni">Voir Tous les Alumni</a>
+                        <a href="#ajouter-alumni">Ajouter un Alumni</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="lien-nav-bar" onclick="toggleDropdown(event, 'offres-dropdown')">
+                        <img src="icone/icon-park-outline--weixin-cards-offers.svg" alt="Offres">
+                        <span class="tooltip">Offres de Stage</span>
+                    </a>
+                    <div id="offres-dropdown" class="dropdown-content">
+                        <a href="#gestion-offres">Voir Toutes les Offres</a>
+                        <a href="#ajouter-offre">Ajouter une Offre</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#communication" class="lien-nav-bar">
+                        <img src="icone/guidance--meeting-room.svg" alt="Entretien">
+                        <span class="tooltip">Cours et Ressources</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#aide" class="lien-nav-bar">
+                        <img src="icone/ic--twotone-help.svg" alt="Aide">
+                        <span class="tooltip">Aide</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Bloc principal -->
+    <main>
+        <section id="home" class="section-content">
+            <h1>Bienvenue sur la Plateforme de Gestion de Stage</h1>
+            <p>Nous vous aidons à gérer les stages, les entreprises, et les secteurs d'activité pour faciliter l'intégration des étudiants dans le monde professionnel.</p>
+        </section>
+
+        <!-- Menu principal -->
+        <section class="sections-cles">
+            <div id="gestion-offres" class="section">
+                <h3>Gestion des Offres de Stage</h3>
+                <button class="btn-section">Voir Toutes les Offres</button>
+                <button class="btn-section">Ajouter une Offre</button>
+            </div>
+            <div id="gestion-entreprises" class="section">
+                <h3>Gestion des Entreprises</h3>
+                <button class="btn-section">Voir Toutes les Entreprises</button>
+                <button class="btn-section">Ajouter une Entreprise</button>
+            </div>
+            <div id="gestion-secteurs" class="section">
+                <h3>Gestion des Secteurs d'Activité</h3>
+                <button class="btn-section">Voir Tous les Secteurs</button>
+                <button class="btn-section">Ajouter un Secteur</button>
+            </div>
+            <div id="gestion-etudiants-alumni" class="section">
+                <h3>Gestion des Étudiants et Alumni</h3>
+                <button class="btn-section">Voir Tous les Étudiants</button>
+                <button class="btn-section">Ajouter un Étudiant</button>
+                <button class="btn-section">Voir Tous les Alumni</button>
+                <button class="btn-section">Ajouter un Alumni</button>
+            </div>
+        </section>
+
+        <!-- Section d'Aperçu et Statistiques -->
+        <section class="overview">
+            <h2>Aperçu et Statistiques</h2>
+            <p>Nombre total d'offres de stage : <strong>120</strong></p>
+            <p>Nombre total d'entreprises : <strong>50</strong></p>
+            <p>Nombre total d'étudiants placés : <strong>200</strong></p>
+            <p>Dernières notifications : <strong>5 nouvelles offres de stage</strong></p>
+        </section>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Plateforme de Gestion de Stage. Tous droits réservés.</p>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleDropdown(event, dropdownId) {
+            event.preventDefault();
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

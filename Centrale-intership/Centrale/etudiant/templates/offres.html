@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Offres de stage{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/offre_pagestyle.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/style_carousel.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <h2>Rechercher un stage</h2>
+    <form method="GET" action="." class="search-form">
+        <div class='form-group'>
+            <input type="text" name="lieu" id="lieu" placeholder="Lieu" list="lieux">
+        </div>
+        <div class='form-group'>
+            <input type="text" name="secteur" id="secteur" placeholder="Secteur" list="secteurs">
+        </div>
+        <div class='form-group'>
+            <select id="type" name="type">
+                <option value="">Type de stage</option>
+                <option value="OBS">Observation</option>
+                <option value="ASS_ENG">Assistant Ingénieur</option>
+                <option value="PFE">Projet de fin d'étude</option>
+                <option value="RES">Recherche</option>
+            </select>
+        </div>
+        <div class='form-group'>
+            <input type="text" name="entreprise" id="entreprise" placeholder="Entreprise" list="entreprises">
+        </div>
+        <button type="submit" id='submit'>Rechercher</button>   
+    </form>
+</div>
+
+<div class='offres-list'>
+  {% for object in offre %}
+  <div class="offre-card">
+      <a href="{% url 'infos' object.id %}" class='offre-link'>
+          <div class="offre-logo">
+              <img src="{{ object.logo_url }}" alt="Logo {{ object.titre }}" class="image">
+          </div>
+          <div class="offre-details">
+              <h3 class="offre-titre">{{ object.titre }}</h3>
+              <p class="offre-validation {% if object.stage_valide == 'OUI' %}valide{% else %}non-valide{% endif %}">
+                  Stage {% if object.stage_valide == 'OUI' %}validé{% else %}non validé{% endif %} par l'école
+              </p>
+              <p class="offre-date">Publié le {{ object.date_de_publication|date:"d/m/Y" }}</p>
+          </div>
+      </a>
+  </div>
+  {% endfor %}
+</div>{% endblock %}

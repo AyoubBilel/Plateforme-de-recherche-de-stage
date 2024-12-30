@@ -1,0 +1,47 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}offre{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_offres_style.css' %}">
+{% endblock link %}
+    <!-- Main Content -->
+   {% block content %}
+   <h1>Gestion des Offres de Stage</h1>
+   <div class="add-offer">
+       <button class="btn-add" onclick="window.location.href='{% url "R_ajouter_offre" %}'">Ajouter une Offre de Stage</button>
+   </div>
+   <div class="table-container">
+       <table>
+           <thead>
+               <tr>
+                   <th>Logo</th>
+                   <th>Entreprise</th>
+                   <th>Intitulé</th>
+                   <th>Description</th>
+                   <th>Date de Publication</th>
+                   <th>Actions</th>
+               </tr>
+           </thead>
+           <tbody>
+            {% for offre  in offres  %}
+            <tr onclick="window.location.href='{% url "candidatures_pour_offre" offre.id %}'">
+                <td><img src="{{offre.logo_url}}" alt="Logo de l'entreprise" class="logo-entreprise"></td>
+                <td>{{offre.entrprise}}</td>
+                <td>{{offre.titre}}</td>
+                <td>{{offre.description}}</td>
+                <td>{{offre.date_de_publication}}</td>
+                <td >
+                    <a href="{% url 'r_offre_modifier' offre.id %}" class="btn-action">Modifier</a>
+                    <a href="{% url 'r_offre_supprimer' offre.id %}" class="btn-action">Supprimer</a>
+                    <a href="{% url "candidatures_pour_offre" offre.id %}" class="btn-action">candidatures</a>
+                </td>               
+            </tr>
+            {% endfor %}
+               <!-- Ajouter d'autres lignes selon les besoins -->
+           </tbody>
+       </table>
+   </div> 
+   {% endblock content %}
+   
+</body>
+</html>

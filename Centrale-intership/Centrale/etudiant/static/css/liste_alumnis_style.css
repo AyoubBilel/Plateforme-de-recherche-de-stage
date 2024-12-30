@@ -1,0 +1,111 @@
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+}
+
+.btn-section {
+    margin-left: 45%;
+}
+
+.barre-recherche {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.barre-recherche input[type="text"] {
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+.barre-recherche button {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.barre-recherche button:hover {
+    background-color: darkgreen;
+}
+
+.ajouter-alumnis {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.ajouter-alumnis .btn-action {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.ajouter-alumnis .btn-action:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00A986;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.btn-action {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 2px;
+}
+
+.btn-action:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}

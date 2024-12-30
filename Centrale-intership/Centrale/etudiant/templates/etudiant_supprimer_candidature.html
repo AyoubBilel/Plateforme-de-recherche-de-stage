@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Supprimer
+{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/etudiant_supprimer_candidature.css' %}">
+
+
+{% endblock link %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Supprimer Candidature</h1>
+        <p class="warning">Vous êtes sur le point de supprimer cette candidature. Cette action est irréversible.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="cancel" class="btn btn-cancel">Annuler</button>
+            <button type="submit" name="confirm" class="btn btn-delete">Supprimer</button>
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock content %}

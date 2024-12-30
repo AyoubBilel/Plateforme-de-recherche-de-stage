@@ -1,0 +1,111 @@
+h1 {
+    margin-bottom: 20px;
+}
+
+.btn-section {
+    margin-left: 45%;
+}
+
+.barre-recherche {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.barre-recherche input[type="text"],
+.barre-recherche select {
+    width: 20%;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.barre-recherche button {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.barre-recherche button:hover {
+    background-color: darkgreen;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 15%;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00A986;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.logo-entreprise {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.btn-action {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #00A986;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 5px 0;
+}

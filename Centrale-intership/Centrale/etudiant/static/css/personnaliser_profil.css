@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    margin-top: 10%;
+    width: 80%;
+    margin: 4% auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.profile-container h1 {
+    color: #00A986;
+    margin-bottom: 2rem;
+}
+
+.portals {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.portal {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 40%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portal:hover {
+    transform: scale(1.05);
+}
+
+.portal h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.portal p {
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #00A986;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00875a;
+    transform: scale(1.05);
+}

@@ -1,0 +1,53 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/liste_alumnis_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Liste des Alumnis</h1>
+    <form method="GET" class="barre-recherche">
+        <input type="text" name="search" placeholder="Recherche par nom ou prénom..." value="{{ request.GET.search }}">
+        <input type="text" name="secteur" placeholder="Recherche par secteur..." value="{{ request.GET.secteur }}">
+        <input type="text" name="entreprise" placeholder="Recherche par entreprise..." value="{{ request.GET.entreprise }}">
+        <input type="text" name="ville" placeholder="Recherche par ville..." value="{{ request.GET.ville }}">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <div class="ajouter-alumnis">
+        <a href="{% url 'ajouter_alumnis' %}" class="btn-action">Ajouter un Alumni</a>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Promotion</th>
+                    <th>Email</th>
+                    <th>LinkedIn</th>
+                    <th>Numéro</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alumnis in alumnis %}
+                <tr>
+                    <td>{{ alumnis.nom }}</td>
+                    <td>{{ alumnis.prenom }}</td>
+                    <td>{{ alumnis.promotion }}</td>
+                    <td>{{ alumnis.email }}</td>
+                    <td><a href="{{ alumnis.linkdn }}" target="_blank">Profil LinkedIn</a></td>
+                    <td>{{ alumnis.numero }}</td>
+                    <td>
+                        <a href="{% url 'modifier_alumnis' alumnis.pk %}" class="btn-action">Modifier</a>
+                        <a href="{% url 'supprimer_alumnis' alumnis.pk %}" class="btn-action">Supprimer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

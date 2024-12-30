@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+    {% block link %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <div id="topbar">
+            <img src="{% static 'images/im.png' %}" id="logo" alt="Logo">
+            <div style="display: flex; align-items: center;">
+                <a href="#" id="nav-link-pro-clik">
+                    <img src="{% static 'images/people.svg' %}" id="profil_logo" alt="Profile">
+                    <span id="nom_prenom">{{ user.first_name }} {{ user.last_name }}</span>
+                </a>
+                <a href="{% url 'acceuil' %}" id="deconnexion">
+                    <button class="Btn">
+                        <div class="sign">
+                            <svg viewBox="0 0 512 512">
+                                <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                            </svg>
+                        </div>
+                        <div class="text">Logout</div>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div id="nav-bar">
+            <ul>
+                <li class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                    <a href="{% url 'home' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/home.svg' %}" alt="Home">
+                        <span class="tooltip">Accueil</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'secteur' %}active{% endif %}">
+                    <a href="{% url 'secteur' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/secteur.svg' %}" alt="Sector">
+                        <span class="tooltip">Secteur</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'entreprise' %}active{% endif %}">
+                    <a href="{% url 'entreprise' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/company.svg' %}" alt="Company">
+                        <span class="tooltip">Entreprise</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'alumnis' %}active{% endif %}">
+                    <a href="{% url 'alumnis' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/graduate.svg' %}" alt="Alumni">
+                        <span class="tooltip">Alumnis</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'offres' %}active{% endif %}">
+                    <a href="{% url 'offres' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/offers.svg' %}" alt="Offers">
+                        <span class="tooltip">Offres</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'select_sector' %}active{% endif %}">
+                    <a href="{% url 'select_sector' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/meeting.svg' %}" alt="Interview">
+                        <span class="tooltip">Entretien</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'personnaliser_profil' %}active{% endif %}">
+                    <a href="{% url 'personnaliser_profil' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/cv.svg' %}" alt="Profile">
+                        <span class="tooltip">Personnaliser Profil</span>
+                    </a>
+                </li>
+                <li >
+                    <a href= 'https://falleiz-internship-cv-correcteur-chatpdf1-ncc2l2.streamlit.app/'class="lien-nav-bar">
+                        <img src="{% static 'images/cv.svg' %}" alt="Voir Candidature">
+                        <span class="tooltip">correction de cv</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'etudiant_candidature' %}active{% endif %}">
+                    <a href="{% url 'etudiant_candidature' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/cv.svg' %}" alt="Voir Candidature">
+                        <span class="tooltip">Voir Candidature</span>
+                    </a>
+                </li>
+                <li class="{% if request.resolver_match.url_name == 'aide' %}active{% endif %}">
+                    <a href="{% url 'aide' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/help.svg' %}" alt="Help">
+                        <span class="tooltip">Aide</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="menu">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{% static 'js/carousel.js' %}"></script>
+</body>
+</html>

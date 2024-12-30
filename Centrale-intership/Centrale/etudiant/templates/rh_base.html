@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/R_base_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+    {% block link %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <div id="topbar">
+            <!--logo-->
+            <img src="{% static 'images/im.png' %}" id="logo">
+            <!--clik sur le profil-->
+            <a href="" id="nav-link-pro-clik">
+                <img src="{% static 'images/user-interface.png' %}" id="profil_logo">
+                <span id="nom_prenom">
+                    {{ user.first_name }} {{ user.last_name }}
+                </span>
+            </a>
+            <!--Clik sur déconnecter-->
+            <a href="{% url 'acceuil' %}" id="deconnexion">
+                <link rel="stylesheet" href="animation/animation_log_out/style.css">
+                <button class="Btn">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9v-62.1h-128c-17.7 0-32-14.3-32-32v-64c0-17.7 14.3-32 32-32h128V105.9c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96H96c-17.7 0-32 14.3-32 32v256c0 17.7 14.3 32 32 32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-53 0-96-43-96-96V128C0 75 43 32 96 32h64c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">Logout</div>
+                </button>
+            </a>
+        </div>
+       
+        <div id="nav-bar">
+            <ul>
+                <li class="{% if request.resolver_match.url_name == 'rh_home' %}active{% endif %}">
+                    <a href="{% url 'rh_home' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/loger.png' %}">
+                        <span class="tooltip">Accueil</span>
+                    </a>
+                </li>
+                <li id="secteur_page" class="dropdown {% if request.resolver_match.url_name in 'offre R_ajouter_offre' %}active{% endif %}">
+                    <a href="{% url 'offre' %}" class="lien-nav-bar">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" width="20px" height="20px" alt="Offres Icon">
+                        <span class="tooltip">Offres de Stage</span>
+                    </a>
+                    <div id="offre-dropdown" class="dropdown-content">
+                        <a href="{% url 'offre' %}">Voir Toutes les Offres de stages</a>
+                        <a href="{% url 'R_ajouter_offre' %}">Ajouter une offres</a>
+                    </div>
+                </li>
+                <li id="entreprise" class="{% if request.resolver_match.url_name == 'all_candidature' %}active{% endif %}">
+                    <a href="{% url 'all_candidature' %}" class="lien-nav-bar">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="20px" height="20px" alt="Candidatures Icon">
+                        <span class="tooltip">Candidatures</span>
+                    </a>
+                </li>
+                <li id="entreprise" class="{% if request.resolver_match.url_name == 'favoris' %}active{% endif %}">
+                    <a href="{% url 'favoris' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/favoris.png' %}" width="20px" height="20px" alt="Candidatures Icon">
+                        <span class="tooltip">Candidature Favoris</span>
+                    </a>
+                </li>
+                <li id="entreprise" class="{% if request.resolver_match.url_name == 'r_liste_etudiants' %}active{% endif %}">
+                    <a href="{% url 'r_liste_etudiants' %}" class="lien-nav-bar">
+                        <img src="{% static 'images/homme.png' %}" width="20px" height="20px" alt="Candidatures Icon">
+                        <span class="tooltip">Profil Etudiant</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Bloc principale-->
+    <div class="menu">
+        {% block content %}{% endblock %}       
+    </div>
+
+    <script src="{% static 'js/carousel.js' %}"></script>
+</body>
+</html>

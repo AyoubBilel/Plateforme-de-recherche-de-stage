@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Feedback{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <h1>Feedback sur l'Entretien</h1>
+    <audio controls autoplay>
+        <source src="{{ audio_url }}" type="audio/mp3">
+        Votre navigateur ne supporte pas cet audio.
+    </audio>
+    <h2>{{ final_message }}</h2>
+    <div class="feedback-section improvement-feedback">
+        <h2>Suggestions d'Amélioration</h2>
+        <p>{{ feedbacks.2 }}</p>
+    </div>
+    </div>
+    <div class="feedback-section">
+        <h2>Encouragement</h2>
+        <p>{{ feedbacks.3 }}</p>
+    </div>
+</div>
+{% endblock content %}

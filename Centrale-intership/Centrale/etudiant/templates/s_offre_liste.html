@@ -1,0 +1,103 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_offre_liste_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Liste des Offres de Stage</h1>
+<div class="barre-recherche">
+    <form method="get">
+        <div class='form'>
+            <input type="text" name="titre" placeholder="Titre de l'offre" value="{{ request.GET.titre }}">
+            <input type="text" name="entreprise" placeholder="Entreprise" value="{{ request.GET.entreprise }}">
+            <input type="text" name="secteur" placeholder="Secteur" value="{{ request.GET.secteur }}">
+            <input type="text" name="duree" placeholder="Durée" value="{{ request.GET.duree }}">
+            <select name="type_stage">
+                <option value="">Type de Stage</option>
+                <option value="OBS" {% if request.GET.type_stage == 'OBS' %}selected{% endif %}>Observation</option>
+                <option value="ASS_ENG" {% if request.GET.type_stage == 'ASS_ENG' %}selected{% endif %}>Assistant Ingenieur</option>
+                <option value="PFE" {% if request.GET.type_stage == 'PFE' %}selected{% endif %}>Projet de fin d'étude</option>
+                <option value="RES" {% if request.GET.type_stage == 'RES' %}selected{% endif %}>Recherche</option>
+            </select>
+        </div>
+        <button type="submit">Rechercher</button>
+    </form>
+</div>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Titre de l'Offre</th>
+                <th>Entreprise</th>
+                <th>Secteur</th>
+                <th>Durée</th>
+                <th>Lieu</th>
+                <th>Type de Stage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for offre in offres %}
+            <tr>
+                <td>{{ offre.titre }}</td>
+                <td>{{ offre.entrprise }}</td>
+                <td>{{ offre.secteur }}</td>
+                <td>{{ offre.durée }} mois</td>
+                <td>{{ offre.ville }}</td>
+                <td>{{ offre.get_type_stage_display }}</td>
+                <td>
+                    <a href="{% url 's_offre_modifier' offre.id %}" class="btn-action">Modifier</a>
+                    <a href="{% url 's_offre_supprimer' offre.id %}" class="btn-action">Supprimer</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+
+<!-- Fenêtre modale -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Êtes-vous sûr de vouloir supprimer cette offre ?</p>
+        <form id="delete-form" method="post">
+            {% csrf_token %}
+            <button type="submit">Oui, supprimer</button>
+            <button type="button" id="cancel-button">Annuler</button>
+        </form>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("myModal");
+    var closeBtn = document.getElementsByClassName("close")[0];
+    var cancelButton = document.getElementById("cancel-button");
+
+    document.querySelectorAll('.btn-action.delete').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = document.getElementById('delete-form');
+            form.action = this.getAttribute('data-url');
+            modal.style.display = "block";
+        });
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    cancelButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+</script>

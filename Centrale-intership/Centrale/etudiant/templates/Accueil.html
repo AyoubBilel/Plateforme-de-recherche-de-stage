@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Recherche de Stage</title>
+    <link rel="stylesheet" href="{% static 'css/acceuil.css' %}">
+  </head>
+<body>
+    <header>
+        <h1>Bienvenue sur la Plateforme de Recherche de Stage</h1>
+    </header>
+    <main>
+        <div class="portal" id="student-portal">
+            <h2>Portail Étudiant</h2>
+            <p>Accédez aux offres de stage et postulez facilement.</p>
+            <a href=" {% url "login" %}">Entrer</a>
+        </div>
+        <div class="portal" id="school-services-portal">
+            <h2>Services Scolarité</h2>
+            <p>Gérez les inscriptions, les validations et les conventions de stage.</p>
+            <a href="{% url 's_login'%}">Entrer</a>
+        </div>
+        <div class="portal" id="headhunter-portal">
+            <h2>Ressources humaines</h2>
+            <p>Trouvez les meilleurs stagiaires pour votre entreprise.</p>
+            <a href="{% url "rh_login" %}">Entrer</a>
+        </div>
+    </main>
+</body>
+</html>

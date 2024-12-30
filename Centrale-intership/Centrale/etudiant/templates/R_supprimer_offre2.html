@@ -1,0 +1,26 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}Supprimer une Offre de Stage{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_supprimer_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <div class="confirmation-box">
+        <h1>Supprimer l'Offre de Stage</h1>
+        <p>Êtes-vous sûr de vouloir supprimer l'offre de stage suivante ? Cette action est irréversible.</p>
+        <ul>
+            <li><strong>Intitulé:</strong> {{ offre.titre }}</li>
+            <li><strong>Entreprise:</strong> {{ offre.entreprise }}</li>
+            <li><strong>Description:</strong> {{ offre.description }}</li>
+            <li><strong>Date de Publication:</strong> {{ offre.date_de_publication }}</li>
+        </ul>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn-action">Oui, supprimer</button>
+            <a href="{% url 'offre' %}" class="btn-action">Annuler</a>
+        </form>
+    </div>
+</main>
+{% endblock content %}
