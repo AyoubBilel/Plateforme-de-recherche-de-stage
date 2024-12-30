@@ -1,0 +1,112 @@
+h1 {
+    color: #00A986;
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: 35%;
+}
+
+.btn-section {
+    margin-left: 45%;
+}
+
+.barre-recherche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 10px;
+    /* Ajoute un espace entre les éléments */
+}
+
+.barre-recherche input[type="text"],
+.barre-recherche input[type="text"],
+.barre-recherche select {
+    width: 20%;
+    /* Ajustez la largeur en fonction du nombre d'éléments */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.barre-recherche button {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.barre-recherche button:hover {
+    background-color: darkgreen;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00A986;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.btn-action {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #00A986;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 5px 0;
+}
