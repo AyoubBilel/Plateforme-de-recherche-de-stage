@@ -1,0 +1,55 @@
+#entreprise {
+    background-color: #00A986;
+}
+
+
+/*---------------------------------------------------------------- */
+
+main {
+    background-color: #F5F5F5;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: 85%;
+}
+
+div.pyramid-loader {
+    margin-left: 30%;
+}
+
+.Secteur {
+    position: absolute;
+    left: 500px;
+    top: 80px;
+    background-color: lightgreen;
+    padding: 2px 30px;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Description {
+    position: absolute;
+    left: 110px;
+    top: 210px;
+    background-color: lightgreen;
+    padding: 0px 53px;
+    border-radius: 8px;
+}
+
+.image {
+    position: absolute;
+    left: 110px;
+    top: 290px;
+}
+
+.desc {
+    position: absolute;
+    background-color: rgb(218, 216, 216);
+    padding: 40px 20px;
+    width: 850px;
+    left: 320px;
+    top: 210px;
+    text-align: justify;
+    border-radius: 8px;
+}
