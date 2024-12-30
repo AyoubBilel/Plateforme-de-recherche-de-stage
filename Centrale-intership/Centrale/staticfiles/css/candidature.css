@@ -1,0 +1,43 @@
+.form-control {
+    /* Ajoutez vos styles personnalisés ici */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 30%;
+}
+
+.btn-primary {
+    /* Ajoutez vos styles de bouton ici */
+    background-color: #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.candidature-form {
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 10%;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 65%;
+    height: 40%;
+}
+
+#soumettre {
+    position: absolute;
+    margin-left: 40%;
+    padding: 10px;
+    color: rgb(75, 212, 167);
+}
