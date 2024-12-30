@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Infos{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/alumnis_indiv.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+{% endblock %}
+{% block content %}
+<div class="profile-container">
+    {% if object.photo %}
+    <img src="{{ object.photo.url }}" alt="" class="round-img">
+    {% endif %}
+    <div class="profile-info">
+        <span id="nom_prenoms"><em>{{ object.nom }} {{ object.prenom }}</em></span>
+        <div class="contact-info">
+            <img src="{% static 'images/email-1.webp' %}" alt="Email" class="contact-icon">
+            <a href="mailto:{{ object.email }}"><span id="mail"><i>{{ object.email }}</i></span></a>
+        </div>
+        <div class="contact-info">
+            <img src="{% static 'images/tél.png' %}" alt="Téléphone" class="contact-icon">
+            <span id="tel"><i>{{ object.numero }}</i></span>
+        </div>
+    </div>
+</div>
+
+<div class="stages-container">
+    <div class="stage_1">
+        <details>
+            <summary><i>Stage 1A</i></summary>
+            <p>Entreprise: {{ object.stage_1A_entreprise }}<br> secteurs: {{ object.stage_1A_secteur }}</p>
+        </details>
+    </div>
+    <div class="stage_2">
+        <details>
+            <summary><i>Stage 2A</i></summary>
+            <p>Entreprise: {{ object.stage_2A_entreprise }}<br> secteurs: {{ object.stage_2A_secteur }}</p>
+        </details>
+    </div>
+</div>
+
+<div class="stages-container">
+    <div class="stage_PFE">
+        <details>
+            <summary><i>PFE</i></summary>
+            <p>Entreprise: {{ object.stage_3A_entreprise }}<br> secteurs: {{ object.stage_3A_secteur }}</p>
+        </details>
+    </div>
+    <div class="Emploi">
+        <details>
+            <summary><i>Emploi</i></summary>
+            <p>Entreprise: {{ object.emploi_entreprise }}<br> secteurs: {{ object.emploi_secteur }}</p>
+        </details>
+    </div>
+</div>
+{% endblock %}

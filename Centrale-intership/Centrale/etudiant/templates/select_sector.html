@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}secteur{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/secteur.css' %}">
+{% endblock link %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Choisir le Secteur</h1>
+        <p>Bienvenue dans notre simulateur d'entretien. Veuillez choisir le secteur pour lequel vous souhaitez vous préparer.</p>
+        <form method="post">
+            {% csrf_token %}
+            <label for="sector">Choisissez un secteur :</label>
+            {{ sector_form.as_p }}
+            <button type="submit">Commencer</button>
+        </form>
+    </div>
+
+{% endblock content %}

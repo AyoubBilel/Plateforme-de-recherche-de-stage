@@ -1,0 +1,43 @@
+{% extends "rh_base.html" %}
+{% load static %}
+
+{% block title %}Toutes les Candidatures{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/all_candidature_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Toutes les Candidatures</h1>
+    {% for offre, candidatures in offre_candidatures %}
+        <div class="offre-section">
+            <h2>{{ offre.titre }} publié le {{offre.date_de_publication}}</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>CV</th>
+                            <th>Lettre de Motivation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for candidature in candidatures %}
+                        <tr>
+                            <td>{{ candidature.etudiant.last_name }}</td>
+                            <td>{{ candidature.etudiant.first_name }}</td>
+                            <td>{{ candidature.etudiant.email }}</td>
+                            <td><a href="{{ candidature.cv.url }}" target="_blank">Voir CV</a></td>
+                            <td><a href="{{ candidature.lettre.url }}" target="_blank">Voir Lettre</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endfor %}
+</main>
+{% endblock content %}

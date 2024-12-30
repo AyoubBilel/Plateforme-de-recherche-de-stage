@@ -1,0 +1,45 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_liste_etudiant_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Liste des Étudiants</h1>
+    <form method="GET" class="barre-recherche">
+        <input type="text" name="search" placeholder="Recherche par nom ou prénom..." value="{{ request.GET.search }}">
+        <button type="submit">Rechercher</button>
+    </form>
+    
+    <button class="btn"><a href="{% url 'ajouter_etudiant' %}" class="btn-action">Ajouter un Étudiant</a>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Secteur</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for etudiant in etudiants %}
+                <tr>
+                    <td>{{ etudiant.last_name }}</td>
+                    <td>{{ etudiant.first_name }}</td>
+                    <td>{{ etudiant.email }}</td>
+                    <td>{{ etudiant.secteur.nom }}</td>
+                    <td>
+                        <a href="{% url 'modifier_etudiant' etudiant.pk %}" class="btn-action">Modifier</a>
+                        <a href="{% url 'supprimer_etudiant' etudiant.pk %}" class="btn-action">Supprimer</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

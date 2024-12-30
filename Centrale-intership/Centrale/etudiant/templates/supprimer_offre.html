@@ -1,0 +1,20 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_offre_supprimer_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/supprimer_offre._style.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class='supprimer'>
+    <h1>Supprimer l'Offre de Stage</h1>
+    <p>Êtes-vous sûr de vouloir supprimer l'offre de stage "{{ offre.titre }}" ?</p>
+    <form method="post" class='form'>
+        {% csrf_token %}
+        <button type="submit" class='bouton_suppress'>Oui, supprimer</button>
+        <a href="{% url 's_offre_liste' %}">Annuler</a>
+    </form>
+</div>
+
+{% endblock content %}

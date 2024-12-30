@@ -1,0 +1,40 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}Favoris{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_favoris_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<h1>Favoris</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>CV</th>
+                <th>Lettre de Motivation</th>
+                <th>Retirer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for favori in favoris %}
+            <tr>
+                <td>{{ favori.candidature.etudiant.last_name }}</td>
+                <td>{{ favori.candidature.etudiant.first_name }}</td>
+                <td>{{ favori.candidature.etudiant.email }}</td>
+                <td><a href="{{ favori.candidature.cv.url }}" target="_blank">Voir CV</a></td>
+                <td><a href="{{ favori.candidature.lettre.url }}" target="_blank">Voir Lettre</a></td>
+                <td>
+                    <a href="{% url 'retirer_favori' favori.candidature.id %}" class="btn-remove-favorite">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828945.png" width="20px" height="20px" alt="Retirer Favoris">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

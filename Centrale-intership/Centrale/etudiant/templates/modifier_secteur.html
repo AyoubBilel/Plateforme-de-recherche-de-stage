@@ -1,0 +1,21 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_modifier_secteur_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Modifier le Secteur</h1>
+    <div class="form-container">
+        <form method="POST" class="formulaire-secteur">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit" class="btn-action">Enregistrer les modifications</button>
+                <a href="{% url 's_liste_secteur' %}" class="btn-action">Annuler</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

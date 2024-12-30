@@ -1,0 +1,21 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/modifier_etudiant_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Modifier l'Étudiant</h1>
+    <div class="form-container">
+        <form method="POST" class="formulaire-etudiant">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit" class="btn-action">Enregistrer les modifications</button>
+                <a href="{% url 's_liste_etudiants' %}" class="btn-action">Annuler</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

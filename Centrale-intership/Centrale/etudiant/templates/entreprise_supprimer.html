@@ -1,0 +1,21 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/supprimer_secteur_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Supprimer l'Entreprise</h1>
+    <div class="confirm-container">
+        <p>Êtes-vous sûr de vouloir supprimer l'entreprise "{{ entreprise.nom }}" ? Cette action est irréversible.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-actions">
+                <button type="submit" class="btn-delete">Oui, supprimer</button>
+                <a href="{% url 's_entrprise_liste' %}" class="btn-action">Annuler</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

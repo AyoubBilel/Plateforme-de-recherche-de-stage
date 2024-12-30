@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Personnaliser Profil{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/personnaliser_profil.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+{% endblock link %}
+
+{% block content %}
+<div class="profile-container">
+    <h1>Personnaliser votre Profil</h1>
+    <div class="portals">
+        <div class="portal">
+            <h2>Voir Portfolio</h2>
+            <p>Consultez votre portfolio pour voir les informations actuelles.</p>
+            <a href="{% url 'etudiant_portfolio2' user.id %}" class="btn">Voir Portfolio</a>
+        </div>
+        <div class="portal">
+            <h2>Mettre à jour Portfolio</h2>
+            <p>Modifiez les informations de votre portfolio.</p>
+            <a href="{% url 'update_portfolio' user.id %}" class="btn">Mettre à jour</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

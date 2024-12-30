@@ -1,0 +1,90 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}Profil{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/portfolio_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="portfolio">
+    <header>
+        <div class="header-content">
+            <div class="profile-pic">
+                {% if portfolio.photo %}
+                <img src="{{ portfolio.photo.url }}" alt="Photo de {{ portfolio.user.first_name }}">
+                {% endif %}
+            </div>
+            <div class="header-text">
+                <h1>{{ portfolio.user.first_name }} {{ portfolio.user.last_name }}</h1>
+                <p>{{ portfolio.specialite }}</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="portfolio-nav">
+        <ul class="portfolio-nav-list">
+            <li class="portfolio-nav-item"><a href="#introduction">Introduction</a></li>
+            <li class="portfolio-nav-item"><a href="#formation">Formation</a></li>
+            <li class="portfolio-nav-item"><a href="#experience">Expériences</a></li>
+            <li class="portfolio-nav-item"><a href="#competences">Compétences</a></li>
+            <li class="portfolio-nav-item"><a href="#projets">Projets</a></li>
+            <li class="portfolio-nav-item"><a href="#certifications">Certifications</a></li>
+            <li class="portfolio-nav-item"><a href="#publications">Publications</a></li>
+            <li class="portfolio-nav-item"><a href="#extrascolaire">Extrascolaire</a></li>
+            <li class="portfolio-nav-item"><a href="#references">Références</a></li>
+        </ul>
+    </nav>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>{{ portfolio.introduction }}</p>
+    </section>
+
+    <section id="formation">
+        <h2>Formation</h2>
+        <p>{{ portfolio.formation }}</p>
+    </section>
+
+    <section id="experience">
+        <h2>Expériences professionnelles</h2>
+        <p>{{ portfolio.experiences_professionnelles }}</p>
+    </section>
+
+    <section id="competences">
+        <h2>Compétences</h2>
+        <p>{{ portfolio.competences_techniques }}</p>
+    </section>
+
+    <section id="projets">
+        <h2>Projets et réalisations</h2>
+        <p>{{ portfolio.projets_realises }}</p>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications et formations complémentaires</h2>
+        <p>{{ portfolio.certifications }}</p>
+    </section>
+
+    <section id="publications">
+        <h2>Publications et conférences</h2>
+        <p>{{ portfolio.publications }}</p>
+    </section>
+
+    <section id="extrascolaire">
+        <h2>Activités extrascolaires et bénévolat</h2>
+        <p>{{ portfolio.activites_extrascolaires }}</p>
+    </section>
+
+    <section id="references">
+        <h2>Références</h2>
+        <p>{{ portfolio.references }}</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 {{ portfolio.user.first_name }} {{ portfolio.user.last_name }}. Tous droits réservés.</p>
+    </footer>
+
+    <script src="{% static 'js/portfolio_scripts.js' %}"></script>
+</div>
+{% endblock content %}

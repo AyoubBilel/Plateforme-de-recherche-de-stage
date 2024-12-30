@@ -1,0 +1,19 @@
+{% extends 's_base.html' %}
+{% load static %}
+{% block link  %}
+<link rel="stylesheet" href="{% static 'css/s_entreprise_modifier_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+{% endblock link  %}
+{% block content %}
+<main>
+    <h1>Modifier l'Entreprise</h1>
+    <form method="POST" class='forms'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-action">Enregistrer les modifications</button>
+        <a href="{% url 's_entrprise_liste' %}" class="btn-action">Annuler</a>
+    </form>
+</main>
+{% endblock %}

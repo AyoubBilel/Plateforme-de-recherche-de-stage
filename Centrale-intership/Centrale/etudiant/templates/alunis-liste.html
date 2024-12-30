@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Alumnis{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/alumnis_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/style_carousel.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="get" action=".">
+    <div class="barre-recherche">
+        <input type="text" name="search" value="{{ search_query }}" placeholder="Rechercher par nom...">
+        <button type="submit">Rechercher</button>
+    </div>
+    <div class="filters">
+        <input type="text" name="company" value="{{ company_filter }}" placeholder="Entreprise">
+        
+        <input type="text" name="sector" value="{{ sector_filter }}" placeholder="Secteur">
+        <button type="submit">Filtrer</button>
+        
+    </div>
+</form>
+
+<div id="alumni-list">
+    {% for object in all_object %}
+    <div class="arrange" data-name="{{ object.nom }} {{ object.prenom }}" data-company="{{ object.stage_1A_entreprise }} {{ object.stage_2A_entreprise }} {{ object.stage_3A_entreprise }}" data-sector="{{ object.stage_1A.secteur.nom }} {{ object.stage_2A_secteur }} {{ object.stage_3A_secteur }}">
+        <a href="{% url 'alunis_infos' object.id %}">
+            {% if object.photo %}
+            <img src="{{ object.photo.url }}" alt="" class="round-img">
+            {% endif %}
+            <span id="noms">{{ object.nom }} {{ object.prenom }}</span>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

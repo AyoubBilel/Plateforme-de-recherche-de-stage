@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ entreprise.nom }} - Détails{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/entreprise_description_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="entreprise-description-container">
+    <div class="entreprise-header">
+        <div class="entreprise-logo">
+            <img src="{{ entreprise.logo_url }}" alt="{{ entreprise.nom }} logo">
+        </div>
+        <h1>{{ entreprise.nom }}</h1>
+        <div class="entreprise-sector">
+            <h2>Secteur : {{ entreprise.secteur }}</h2>
+        </div>
+    </div>
+
+    <div class="entreprise-content">
+        <div class="entreprise-description">
+            <h3>Description</h3>
+            <p>{{ entreprise.description }}</p>
+        </div>
+
+        <div class="entreprise-description">
+            <h3>Ville</h3>
+            <p>{{ entreprise.ville }}</p>
+        </div>
+
+        <div class="entreprise-description">
+            <h3>Secteur(s) d'activité</h3>
+            <p>{{ entreprise.secteur }}</p>
+        </div>
+
+        <div class="entreprise-description">
+            <h3>Page Web</h3>
+            <p><a href="{{ entreprise.lien_page_web }}" target="_blank">Visitez notre page web</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

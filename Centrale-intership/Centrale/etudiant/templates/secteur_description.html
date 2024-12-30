@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ secteur.nom }} - Description{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/secteur_description_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="secteur-description-container">
+    <div class="secteur-header">
+        <h1 class="secteur-title">{{ secteur.nom }}</h1>
+    </div>
+
+    <div class="secteur-content">
+        <div class="secteur-description">
+            <h2 class="content-title">Description</h2>
+            <p>{{ secteur.description }}</p>
+        </div>
+
+        <div class="secteur-courses">
+            <h2 class="content-title">Cours disponibles</h2>
+            <ul class="courses-list">
+                {% for course in recommended_courses %}
+                <li class="course-item">
+                    <a href="#">{{ course }}</a>
+                </li>
+                {% empty %}
+                <li>Aucun cours disponible pour le moment.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

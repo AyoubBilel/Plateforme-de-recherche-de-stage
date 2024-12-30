@@ -1,0 +1,28 @@
+{% extends "s_base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_offre_modifier_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/s_modifier_offre.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Modifier l'Offre de Stage</h1>
+<form method="post" class='form'>
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.help_text %}
+        <small>{{ field.help_text }}</small>
+        {% endif %}
+        {% if field.errors %}
+        <div class="errors">
+            {{ field.errors }}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class='submit'>Enregistrer les modifications</button>
+</form>
+{% endblock content %}

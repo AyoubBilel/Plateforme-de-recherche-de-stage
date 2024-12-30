@@ -1,0 +1,53 @@
+{% extends 's_base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/s_entreprise_liste_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h1>Gestion des Entreprises</h1>
+    <form method="GET" class="barre-recherche">
+        <input type="text" name="search_nom" placeholder="Recherche par nom..." value="{{ request.GET.search_nom }}">
+        <input type="text" name="search_ville" placeholder="Recherche par ville..." value="{{ request.GET.search_ville }}">
+        <select name="search_secteur">
+            <option value="">Tous les secteurs</option>
+            {% for secteur in secteurs %}
+                <option value="{{ secteur.nom }}" {% if request.GET.search_secteur == secteur.nom %}selected{% endif %}>{{ secteur.nom }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Rechercher</button>
+
+    </form>
+    <button class="btn-section"><a href='{% url "s_ajouter_entreprise" %}'> Ajouter une Entreprise </a></button>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom de l'Entreprise</th>
+                    <th>Secteur</th>
+                    <th>Ville</th>
+                    <th>Logo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entreprise in entreprises %}
+                <tr>
+                    <td>{{ entreprise.nom }}</td>
+                    <td>{{ entreprise.secteur.nom }}</td>
+                    <td>{{ entreprise.ville }}</td>
+                    <td><img src="{{ entreprise.logo_url }}" alt="Logo" class="logo-entreprise"></td>
+                    <td>
+                        <button class="btn-action"> <a href="{% url 'entreprise_modifier' entreprise.pk %}" class="btn-action">Modifier</a></button>
+                        <button class="btn-action"><a href="{% url 'entreprise_supprimer' entreprise.pk %}" class="btn-action">Supprimer</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+                <!-- Ajouter d'autres lignes selon les besoins -->
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

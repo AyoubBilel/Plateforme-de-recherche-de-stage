@@ -1,0 +1,53 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}Liste des Candidatures{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_candidatures_style.css' %}">
+{% endblock link %}
+
+{% block content%}
+<h1>Liste des Candidatures pour l'offre : {{ offre.titre }}</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>CV</th>
+                <th>Lettre de Motivation</th>
+                <th>Favoris</th>
+                <th>Lu</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for candidature in candidatures %}
+            <tr>
+                <td>{{ candidature.etudiant.last_name }}</td>
+                <td>{{ candidature.etudiant.first_name }}</td>
+                <td>{{ candidature.etudiant.email }}</td>
+                <td><a href="{{ candidature.cv.url }}" target="_blank">Voir CV</a></td>
+                <td><a href="{{ candidature.lettre.url }}" target="_blank">Voir Lettre</a></td>
+                <td>
+                    <a href="{% url "ajouter_favori" candidature.id %}" class="btn-favorite">
+                        <img src="{% static 'images/favoris.svg' %}" width="20px" height="20px" alt="Favoris Icon">
+                    </a>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'marquer_lu' candidature.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-lu">
+                            {% if candidature.traite == 'traité' %}
+                                <img src="{% static 'images/oui.svg' %}" width="20px" height="20px" alt="Lu Icon">
+                            {% else %}
+                                <img src="{% static 'images/no.svg' %}" width="20px" height="20px" alt="Non Lu Icon">
+                            {% endif %}
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

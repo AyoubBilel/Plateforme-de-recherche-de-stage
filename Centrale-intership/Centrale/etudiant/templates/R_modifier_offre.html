@@ -1,0 +1,17 @@
+{% extends "rh_base.html" %}
+{% load static %}
+{% block title %}Modifier une Offre de Stage{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/R_modifier_offre_style.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <h1>Modifier l'Offre de Stage</h1>
+    <form method="post" class="formulaire-offre">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit">Modifier l'offre</button>
+    </form>
+</main>
+{% endblock content %}

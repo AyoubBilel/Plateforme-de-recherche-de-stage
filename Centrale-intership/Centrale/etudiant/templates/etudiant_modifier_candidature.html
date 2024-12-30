@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Modifier
+{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+<link rel="stylesheet" href="{% static 'css/etudiant_modifier_candidature.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap" rel="stylesheet">
+{% endblock link %}
+
+
+{% block content %}
+    <div class="content-wrapper">
+        <div class="welcome-message">
+            Modifier votre candidature
+        </div>
+        <div class="content-layout">
+            <div class="image-container">
+                <img src="https://www.cache.jobology.fr/wp-content/uploads/2021/03/cv-1-720x360.jpg" alt="Candidature Image">
+            </div>
+            <div class="candidature-form">
+                <h1>Modifier Candidature</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-control">
+                        <label for="id_cv">CV</label>
+                        {{ form.cv }}
+                    </div>
+                    <div class="form-control">
+                        <label for="id_lettre">Lettre de Motivation</label>
+                        {{ form.lettre }}
+                    </div>
+                    <button type="submit" id="soumettre">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

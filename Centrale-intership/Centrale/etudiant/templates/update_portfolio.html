@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Mettre à jour Portfolio{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/update_portfolio.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+
+{% endblock link %}
+
+{% block content %}
+<div class="content">
+    <div class="card">
+        <div class="card2">
+            <form method="post" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                <p id="heading">Mise à jour du Portfolio</p>
+                {{ form.as_p }}
+                <div class="btn-container">
+                    <button type="submit" class="button1">Mettre à jour</button>
+                    <a href="{% url "personnaliser_profil" %}" class="button2">Annuler</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

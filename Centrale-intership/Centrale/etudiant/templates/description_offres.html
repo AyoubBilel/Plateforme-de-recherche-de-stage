@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/offres_description.css' %}">
+<link rel="stylesheet" href="{% static 'css/log_out.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class='offre-container'>
+  <div class='offre-header'>
+    <img src="{{object.logo_url}}" class="offre-logo" alt="Logo de l'entreprise">
+    <h1 class="offre-titre">{{object.titre}}</h1>
+  </div>
+  
+  <div class='offre-details'>
+    <div class="offre-info">
+      <span class="info-label">Secteur :</span>
+      <span class="info-value">{{object.secteur}}</span>
+    </div>
+    <div class="offre-info">
+      <span class="info-label">Ville :</span>
+      <span class="info-value">{{object.ville}}</span>
+    </div>
+    <div class="offre-info">
+      <span class="info-label">Contact RH :</span>
+      <span class="info-value">{{object.RH_email}}</span>
+    </div>
+    <div class="offre-info">
+      <span class="info-label">Durée :</span>
+      <span class="info-value">{{object.durée}}mois</span>
+    </div>
+
+  </div>
+  
+  <div class="offre-description">
+    <h2>Description du poste</h2>
+    <p>{{object.description}}</p>
+    <h2>Missions</h2>
+    <p>{{object.Missions}}</p>
+    <h2>Profil_recherché</h2>
+    <p>{{object.Profil_recherché}}</p>
+
+
+
+  </div>
+  
+  <div class="offre-action">
+    <a href="{% url 'candidature' object.id %}" class="btn-candidature">Postuler</a>
+  </div>
+</div>
+{% endblock %}

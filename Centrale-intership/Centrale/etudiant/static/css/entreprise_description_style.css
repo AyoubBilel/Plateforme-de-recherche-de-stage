@@ -1,0 +1,87 @@
+#entreprise {
+    background-color: #00A986;
+}
+
+.entreprise-description-container {
+    margin-left: 70px;
+    margin-top: 70px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+#nav-bar:hover + .entreprise-description-container {
+    margin-left: 240px;
+}
+
+.entreprise-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.entreprise-logo {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.entreprise-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.entreprise-header h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.entreprise-sector {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.entreprise-content {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.entreprise-description h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.entreprise-description p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .entreprise-description-container {
+        margin-left: 0;
+    }
+
+    #nav-bar:hover + .entreprise-description-container {
+        margin-left: 0;
+    }
+
+    .entreprise-content {
+        padding: 20px;
+    }
+}
