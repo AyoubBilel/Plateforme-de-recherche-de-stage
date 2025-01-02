@@ -1,0 +1,17 @@
+Apres le clonage du projet , supprimer l'environnement virtuel
+cree une nouvel environnement
+Activer l'environnement
+installer les biblio suivantes : 
+-pip install pandas
+-pip install scikit-learn
+-pip install django
+-pip install django-phonenumber-field[phonenumbers] 
+-
+
+-python -m pip install Pillow : cela permet de charger des images
+
+
+INSTALLED_APPS = [
+    ...
+    'phonenumber_field',
+]
