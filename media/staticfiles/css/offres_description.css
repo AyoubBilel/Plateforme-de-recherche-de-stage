@@ -1,0 +1,95 @@
+img {
+    position: relative;
+    width: 30%;
+    height: 20%;
+}
+
+.text1 {
+    position: absolute;
+    left: 380px;
+    top: 115px;
+    background-color: #00A986;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px 25px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.text1:hover {
+    background-color: lightgreen;
+}
+
+.text2 {
+    position: absolute;
+    left: 380px;
+    top: 190px;
+    background-color: #00A986;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px 60px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.text2:hover {
+    background-color: lightgreen;
+}
+
+.text3 {
+    position: absolute;
+    left: 380px;
+    top: 265px;
+    background-color: #00A986;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px 72px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.text3:hover {
+    background-color: lightgreen;
+}
+
+.text4 {
+    position: absolute;
+    left: 380px;
+    top: 340px;
+    background-color: #00A986;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px 30px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.text4:hover {
+    background-color: lightgreen;
+}
+
+.text5 {
+    position: absolute;
+    left: 550px;
+    top: 480px;
+    background-color: #00A986;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0px 40px;
+    cursor: pointer;
+}
+
+.text5:hover {
+    background-color: lightgreen;
+}
+
+.text6 {
+    position: absolute;
+    left: 650px;
+    top: 120px;
+    background-color: rgb(232, 229, 229);
+    height: 300px;
+    width: 550px;
+    border-radius: 5px;
+    text-align: center;
+}

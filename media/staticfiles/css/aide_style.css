@@ -1,0 +1,166 @@
+
+#aide_page {
+    background-color:#00A986;
+ 
+ }
+ 
+ /*---------------------------------------------------------------- */
+ /*ETudiant.html block main*/
+div.menu{
+    position:relative;
+    background-color:#F5F5F5 ;
+    margin-top:5%;
+    padding-right: 4%;
+    height: 85%;
+}
+
+div.pyramid-loader{
+    margin-left: 30%;
+}
+
+/*Partie Accueil usser*/
+#ligne1{
+    display:absolute;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+span.accueil_user{
+    align-items: center;
+    display: flex;
+}
+
+#ligne2{
+    display:flex;
+    height: 80%;
+}
+/*Partie secteur*/
+
+div.colonne1{
+   
+    background-color: #FFFFFF;
+    width:30% ;
+    height:20% ;
+   
+}
+span.secteur{
+    display:flex;
+    align-items: center;
+    margin-top: 0%;
+    justify-content: center;
+    
+
+}
+svg.secteur{
+    color:#00A986;
+    width: 10%;
+    height: 10%;
+    
+
+}
+
+
+p.secteur{
+    font-size:100% ;
+    font-weight: bold;
+    color:#00A986
+}
+
+div.secteur{
+    display:flex;
+    position:relative;
+    justify-content: center;
+    padding-top: 30%;
+    padding-bottom: 0%;
+    
+}
+#choisir_secteur{
+    background-color: #00A986;
+    border-color: #00A986;
+    border-radius: 5%;
+}
+/*Partie offres de stage*/
+div.partie_annonce{
+    position: absolute;
+    background-color: #FFFFFF;
+    margin-left: 40%;
+    height:30%;
+    border-radius: 5px;   
+}
+svg.annonce{
+    width:10%;
+    height:10%;
+    color:#00A986;
+}
+div.annonce_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+p.annonce_title{
+    color:#00A986;
+    font-weight: bold;
+}
+/*Partie planning*/
+div.ligne3{
+    background-color: #FFFFFF;
+    position:absolute;
+    margin-top:5%;
+    margin-right:10%;
+    width:50%;
+    height:30%;
+    border-radius: 10px;
+}
+div.planning{
+    display:flex;
+    align-items: center;
+    position:relative;
+    justify-content: center;
+    
+}
+p.titlte{
+    font-weight: bold;
+    color:#00A986;
+    font-size: medium ;
+
+}
+svg.planning{
+    width:5%;
+    height:5%;
+    color:#00A986;
+}
+
+
+
+/*---------------------------------------------------------------- */
+
+
+/* Partie */
+#aide{
+    position:relative;
+    border-radius: 20px;
+    height: 20%;
+    width:90%;
+    background-color: #FFFFFF;
+    text-align:center,justify;
+    padding: 30px;
+    margin-left: 7%;
+}
+#aide_text{
+    color:#00A986;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------*/
+footer {
+    top: 95%;
+    position: fixed;
+    text-align: center;
+    margin-left: 45%;
+}

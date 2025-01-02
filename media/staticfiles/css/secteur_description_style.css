@@ -1,0 +1,80 @@
+#secteur_page {
+    background-color: #00A986;
+}
+
+.Secteur {
+    position: absolute;
+    left: 570px;
+    top: 70px;
+    background-color: lightgreen;
+    padding: 0px 60px;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.Description {
+    position: absolute;
+    left: 250px;
+    top: 150px;
+    background-color: lightgreen;
+    padding: 0px 53px;
+    border-radius: 8px;
+}
+
+.desc {
+    position: absolute;
+    left: 180px;
+    top: 230px;
+    background-color: rgb(218, 216, 216);
+    padding: 70px 20px;
+    width: 500px;
+    text-align: justify;
+    border-radius: 8px;
+}
+
+.config1 {
+    text-align: center;
+}
+
+.conf1 {
+    text-align: start;
+}
+
+.conf1:hover {
+    background-color: lightgreen;
+    width: 300px;
+    padding: 5px 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.conf1::before {
+    content: '\2713';
+    font-size: 20px;
+    font-weight: bolder;
+    padding-right: 10px;
+}
+
+.disp {
+    position: absolute;
+    left: 900px;
+    top: 150px;
+    background-color: lightgreen;
+    padding: 0px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cours {
+    position: absolute;
+    left: 800px;
+    top: 230px;
+    background-color: rgb(218, 216, 216);
+    width: 300px;
+    height: 250px;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
