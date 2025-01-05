@@ -1,0 +1,221 @@
+body {
+    background-color: #F5F5F5;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: block;
+}
+
+#topbar {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    color: #333333;
+    background-color: #FFFFFF;
+    height: 10%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 35px;
+    flex-shrink: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+    height: 60px;
+    width: 70px;
+    margin-left: 10%;
+}
+
+#profil_logo {
+    width: 40px;
+    height: 40px;
+}
+
+#nom_prenom {
+    font-size: 15px;
+}
+
+#nav-link-pro-clik {
+    display: inline-flex;
+    color: #333333;
+    height: 64px;
+    width: 285.84px;
+    margin-left: 50%;
+    text-decoration: none;
+    align-items: center;
+}
+
+#deconnexion {
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center;
+    position: relative;
+    right: 0;
+    cursor: pointer;
+}
+
+#nav-bar {
+    top: 11%;
+    left: 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: #333333;
+    height: 90%;
+    width: 65px;
+    transition: 300ms;
+    z-index: 1000;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline-flexbox;
+    margin-bottom: 7px;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+}
+
+span.tooltip {
+    visibility: hidden;
+}
+
+#nav-bar:hover span.tooltip {
+    visibility: visible;
+    color: black;
+}
+
+#nav-bar:hover {
+    width: 120px;
+}
+
+#nav-bar:hover li {
+    margin-bottom: 19px;
+}
+
+li:hover {
+    background-color: lightgreen;
+}
+
+li.active {
+    background-color: #00A986;
+    height: 40px;
+}
+
+a.lien-nav-bar:active {
+    background-color: #00A986;
+}
+
+.lien-nav-bar {
+    display: inline-flex;
+    align-items: start;
+}
+
+main {
+    background-color: #F5F5F5;
+    margin-top: 11%;
+    margin-left: 7%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.formulaire-alumni {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.btn-submit {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    align-self: center;
+    width: 50%;
+}
+
+.btn-submit:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #00A986;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 5px 0;
+}

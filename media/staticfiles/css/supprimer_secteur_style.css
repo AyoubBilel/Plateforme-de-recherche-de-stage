@@ -1,0 +1,70 @@
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+}
+
+.confirm-container {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+}
+
+.confirm-container p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-action {
+    background-color: #2E8B57;
+    color: white;
+    border: 2px solid #2E8B57;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    width: 48%;
+}
+
+.btn-action:hover {
+    background-color: #228B22;
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    width: 48%;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}

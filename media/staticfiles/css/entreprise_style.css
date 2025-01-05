@@ -1,0 +1,48 @@
+.search-form {
+    margin-top: 10%; /* Réduit pour descendre un peu la barre de recherche */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+    width: 200px; /* Largeur fixe pour aligner les champs */
+    height: 45px;
+    padding: 0 15px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit {
+    background-color: #00A986;
+    color: #fff; /* Changé pour rendre le texte visible */
+    border: none;
+    padding: 0 30px;
+    height: 45px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.entreprises-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centre les entreprises horizontalement */
+    margin-top: 5%; /* Réduit l'espace entre la barre de recherche et les entreprises */
+}
+
+.entreprise {
+    /* ... autres propriétés inchangées ... */
+    width: calc(25% - 20px); /* Ajuste la largeur pour 4 entreprises par ligne */
+    max-width: 230px; /* Limite la largeur maximale */
+    min-width: 200px; /* Assure une largeur minimale */
+}

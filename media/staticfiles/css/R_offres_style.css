@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #00A986;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-offer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    background-color: #00A986;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #00875a;
+    transform: scale(1.05);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 85%;
+    border-collapse: collapse;
+    border-radius: 7px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #00A986;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    /* Ajoute de l'espace entre les boutons */
+}
+
+.btn-action {
+    position: relative;
+    background-color: #00A986;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: #00875a;
+    transform: scale(1.05);
+}
+
+.logo-entreprise {
+    width: 70px;
+    height: 90px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
